@@ -1,0 +1,20 @@
+.pets {
+    background-color: $color-light-l;
+}
+
+.pets__content {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 0 100px 0;
+}
+
+.pets__title {
+    margin-top: 0;
+    text-align: center;
+    color: $color-dark-l;
+}
+
+.pets__button {
+    display: flex;
+    align-self: center;
+}

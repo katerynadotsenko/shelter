@@ -1,0 +1,43 @@
+.navigation {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    margin: 16px 0 17px 0;
+    padding: 0;
+
+    & a {
+        overflow: hidden;
+    }
+}
+
+.navigation__item {
+    position: relative;
+    font-size: 1.5rem;
+    line-height: 160%;
+    color: $color-dark-s;
+    margin: 10px 0px;
+    padding: 0 0.3px;
+    @extend %transition;
+
+    &:hover {
+        color: $color-light-s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: transparent;
+    }
+}
+
+.item_active {
+    color: $color-light-s;
+
+    &.navigation__item::after {
+        background: $color-primary;
+    }
+}

@@ -1,0 +1,65 @@
+.button {
+    font-family: Georgia, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.7rem;
+    line-height: 130%;
+    letter-spacing: 0.06em;
+    color: $color-dark-xl-2;
+    padding: 13px 43px;
+    border-radius: 100px;
+    cursor: pointer;
+    @extend %transition;
+
+    &_bordered {
+        background-color: transparent;
+        border: 2px solid $color-primary;
+    }
+
+    &_colored {
+        background-color: $color-primary;
+        border: 2px solid $color-primary;
+    }
+
+    &:hover {
+        background-color: $color-secondary;
+        border: 2px solid $color-secondary;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.carousel__button {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    padding: 23px 19px;
+}
+
+.button_left::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 6px;
+    background-image: url(/assets/icons/arrow.svg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateY(180deg);
+}
+
+.button_right::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 6px;
+    background-image: url(/assets/icons/arrow.svg);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

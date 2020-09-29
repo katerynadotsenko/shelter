@@ -1,0 +1,37 @@
+.about {
+    background-color: $color-light-xl;
+}
+
+.about__content {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 175px 100px 175px;
+}
+
+.about__image {
+    flex-basis: 35.29%;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.about__text {
+    flex-basis: 50.59%;
+
+    &_paragraph {
+        margin: 25px 0;
+        color: #4C4C4C;
+        @include font($size: 1.5rem, $height: 160%);
+    }
+
+    &_paragraph:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.about__title {
+    padding-right: 60px;
+    color: $color-dark-l;
+}
