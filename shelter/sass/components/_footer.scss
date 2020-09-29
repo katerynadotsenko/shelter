@@ -1,0 +1,102 @@
+.footer {
+    background: $color-dark-background-full;
+    background: url("/assets/backgrounds/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, $color-dark-footer-1 0%, $color-dark-footer-2 60%);
+}
+
+.footer__wrapper {
+    padding-top: 40px;
+}
+
+.footer__title {
+    font-family: Georgia;
+    letter-spacing: 0.06em;
+    color: $color-light-xl;
+    margin: 23px 0 25px 0;
+    @include font($size: 3.5rem, $height: 130%);
+}
+
+.footer__contacts,
+.footer__location {
+    padding-right: 18px;
+}
+
+.footer__image {
+    padding-left: 18px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.contacts__content,
+.location__content {
+    font-family: Georgia;
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-between;
+    letter-spacing: 0.06em;
+    color: $color-primary;
+    @include font($size: 2rem, $height: 115%);
+}
+
+.contacts__content {
+    height: 113px;
+    padding-top: 19px;
+}
+
+.location__content {
+    height: 114px;
+    padding-top: 8px;
+}
+
+.contacts__email {
+    position: relative;
+    padding-left: 60px;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 40px;
+        height: 26px;
+        background-image: url("/assets/icons/mail.svg");
+    }
+}
+
+.contacts__phone {
+    position: relative;
+    padding-left: 60px;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 40px;
+        height: 32px;
+        background-image: url("/assets/icons/phone.svg");
+    }
+}
+
+.location__address {
+    position: relative;
+    padding-left: 40px;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: -3px;
+        transform: translateY(-50%);
+        width: 22px;
+        height: 32px;
+        background-image: url("/assets/icons/pin.svg");
+    }
+}

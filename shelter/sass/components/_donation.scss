@@ -1,3 +1,72 @@
 .donation {
     background-color: $color-light-l;
 }
+
+.donation__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 80px 0 101px 0;
+}
+
+.donation__image {
+    flex-basis: 53.92%;
+    padding: 12px 0 0 142px;
+
+    & img {
+        width: 100%;
+    }
+}
+
+.donation__content {
+    flex-basis: 43.58%;
+    padding: 0 142px 0 0;
+
+    & a {
+        display: block;
+        line-height: 43px;
+        margin-bottom: 19px;
+    }
+}
+
+.donation__title {
+    width: 80%;
+    margin-top: 0;
+    color: $color-dark-l;
+}
+
+.donation__text {
+    font-family: Georgia;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    margin: 22px 0 21px 0;
+    @include font($size: 1.5rem, $height: 110%);
+}
+
+.donation__legal-info {
+    color: $color-dark-m;
+    @include font($size: 1.2rem, $height: 1.5rem, $style: italic);
+}
+
+.donation__credit-card {
+    font-family: Georgia;
+    position: relative;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    background: $color-primary;
+    padding: 10px 15px 10px 60px;
+    border-radius: 9px;
+    @include font($size: 2rem, $height: 115%);
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 15px;
+        top: 10px;
+        height: 23px;
+        width: 30px;
+        border-radius: 0px;
+        background-image: url("/assets/icons/credit-card.svg");
+    }
+}

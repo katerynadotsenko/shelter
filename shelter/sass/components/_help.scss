@@ -1,3 +1,36 @@
 .help {
     background-color: $color-light-xl;
 }
+
+.help__wrapper {
+    padding: 80px 0 45px 0;
+}
+
+.help__title {
+    margin-top: 0;
+    text-align: center;
+    color: $color-dark-l;
+}
+
+.help__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 45px 25.5px 0 25.5px;
+}
+
+.list__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 113px;
+    margin: 0 60px 55px 60px;
+}
+
+.item__text {
+    font-family: Georgia;
+    letter-spacing: 0.06em;
+    color: $color-dark-l;
+    @include font($size: 2rem, $height: 115%);
+}
