@@ -19,8 +19,7 @@ a {
 h1 {
     font-family: Georgia, serif;
     letter-spacing: 0.06em;
-    color: $color-primary;
-    margin: 10px -0.15rem 10px 0;
+    margin: 0 -0.15rem 10px 0;
     @include font($size: 3.2rem, $height: 110%);
 }
 

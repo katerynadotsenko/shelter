@@ -3,7 +3,7 @@
     background: url("/assets/backgrounds/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, $color-dark-footer-1 0%, $color-dark-footer-2 60%);
 }
 
-.footer__wrapper {
+.footer__content {
     padding-top: 40px;
 }
 
@@ -11,7 +11,7 @@
     font-family: Georgia;
     letter-spacing: 0.06em;
     color: $color-light-xl;
-    margin: 23px 0 25px 0;
+    margin: 17px 0 25px 0;
     @include font($size: 3.5rem, $height: 130%);
 }
 
@@ -20,11 +20,11 @@
     padding-right: 18px;
 }
 
-//TODO the picture must be shorter
 .footer__image {
     padding-left: 18px;
 
     & img {
+        display: block;
         width: 100%;
     }
 }

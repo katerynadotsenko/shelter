@@ -1,7 +1,11 @@
 .layout-3-column-27 {
-    @include columns(27.27%);
+    @include columns-no-wrap(27.275%);
 }
 
 .layout-3-column-26 {
-    @include columns(26.5%);
+    @include columns-no-wrap(26.5%);
+}
+
+.layout-4-column {
+    @include columns-wrap(22.5%);
 }

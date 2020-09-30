@@ -4,23 +4,37 @@
     list-style: none;
     margin: 16px 0 17px 0;
     padding: 0;
-
-    & a {
-        overflow: hidden;
-    }
 }
 
 .navigation__item {
     position: relative;
     font-size: 1.5rem;
     line-height: 160%;
-    color: $color-dark-s;
-    margin: 10px 0px;
     padding: 0 0.3px;
     @extend %transition;
 
-    &:hover {
+    &_light {
+        color: $color-dark-s;
+
+        &.item_active {
+            color: $color-light-s;
+        }
+    }
+
+    &_light:hover {
         color: $color-light-s;
+    }
+
+    &_dark {
+        color: $color-dark-l;
+
+        &.item_active {
+            color: $color-dark-xl-2;
+        }
+    }
+
+    &_dark:hover {
+        color: $color-dark-xl-2;
     }
 
     &::after {
@@ -35,8 +49,6 @@
 }
 
 .item_active {
-    color: $color-light-s;
-
     &.navigation__item::after {
         background: $color-primary;
     }

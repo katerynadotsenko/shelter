@@ -8,7 +8,7 @@
     color: $color-dark-xl-2;
     padding: 13px 43px;
     border-radius: 100px;
-    cursor: pointer;
+    outline: none;
     @extend %transition;
 
     &_bordered {
@@ -21,45 +21,53 @@
         border: 2px solid $color-primary;
     }
 
-    &:hover {
+    &:not(:disabled):hover {
         background-color: $color-secondary;
         border: 2px solid $color-secondary;
+        cursor: pointer;
     }
 
-    &:active {
-        outline: none;
-    }
-
-    &:focus {
-        outline: none;
+    &:disabled {
+        border-color: $color-dark-s;
     }
 }
 
-.carousel__button {
+.round__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 52px;
     height: 52px;
-    padding: 23px 19px;
-}
+    padding: 0;
+    @include font($size: 2rem, $height: 115%);
 
-.button_left::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 6px;
-    background-image: url(/assets/icons/arrow.svg);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotateY(180deg);
-}
+    &.button_pagination {
+        padding-bottom: 2px;
+    }
 
-.button_right::after {
-    content: "";
-    position: absolute;
-    width: 14px;
-    height: 6px;
-    background-image: url(/assets/icons/arrow.svg);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    &_left:not(:disabled)::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 6px;
+        background-image: url(/assets/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: rotateY(180deg);
+    }
+
+    &_right:not(:disabled)::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 6px;
+        background-image: url(/assets/icons/arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    &:disabled {
+        color: $color-dark-s;
+    }
 }

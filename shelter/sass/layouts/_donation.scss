@@ -2,7 +2,7 @@
     background-color: $color-light-l;
 }
 
-.donation__wrapper {
+.donation__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -18,7 +18,7 @@
     }
 }
 
-.donation__content {
+.donation__text {
     flex-basis: 43.58%;
     padding: 0 142px 0 0;
 
@@ -35,7 +35,7 @@
     color: $color-dark-l;
 }
 
-.donation__text {
+.donation__paragraph {
     font-family: Georgia;
     letter-spacing: 0.06em;
     color: $color-dark-l;
