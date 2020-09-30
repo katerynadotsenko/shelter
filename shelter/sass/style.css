@@ -1047,6 +1047,7 @@ h3 {
 .contacts__email {
   position: relative;
   padding-left: 60px;
+  color: #F1CDB3;
 }
 .contacts__email::after {
   content: "";
@@ -1063,6 +1064,7 @@ h3 {
 .contacts__phone {
   position: relative;
   padding-left: 60px;
+  color: #F1CDB3;
 }
 .contacts__phone::after {
   content: "";
@@ -1079,6 +1081,7 @@ h3 {
 .location__address {
   position: relative;
   padding-left: 40px;
+  color: #F1CDB3;
 }
 .location__address::after {
   content: "";

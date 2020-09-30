@@ -54,6 +54,7 @@
 .contacts__email {
     position: relative;
     padding-left: 60px;
+    color: $color-primary;
 
     &::after {
         content: "";
@@ -71,6 +72,7 @@
 .contacts__phone {
     position: relative;
     padding-left: 60px;
+    color: $color-primary;
 
     &::after {
         content: "";
@@ -88,6 +90,7 @@
 .location__address {
     position: relative;
     padding-left: 40px;
+    color: $color-primary;
 
     &::after {
         content: "";
