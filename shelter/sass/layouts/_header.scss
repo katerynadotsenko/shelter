@@ -2,15 +2,22 @@
     width: 100%;
     padding: 30px 0;
     z-index: 1;
-}
 
-.header__wrapper {
-    display: flex;
-    justify-content: space-between;
-}
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
 
-.header_main-page {
-    position: absolute;
-    top: 30px;
-    left: 0;
+    &_main-page {
+        position: absolute;
+        top: 30px;
+        left: 0;
+    }
+
+    &_sticky {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        background: $color-light-xl;
+    }
 }

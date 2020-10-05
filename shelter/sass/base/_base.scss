@@ -12,6 +12,12 @@ body {
     font-size: 1.5rem;
 }
 
+.main {
+    &_margin-for-sticky-header {
+        margin-top: 120px;
+    }
+}
+
 a {
     text-decoration: none;
 }

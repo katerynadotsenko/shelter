@@ -467,6 +467,10 @@ body {
   font-size: 1.5rem;
 }
 
+.main_margin-for-sticky-header {
+  margin-top: 120px;
+}
+
 a {
   text-decoration: none;
 }
@@ -754,16 +758,20 @@ h3 {
   padding: 30px 0;
   z-index: 1;
 }
-
 .header__wrapper {
   display: flex;
   justify-content: space-between;
 }
-
 .header_main-page {
   position: absolute;
   top: 30px;
   left: 0;
+}
+.header_sticky {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  background: #FFFFFF;
 }
 
 .start-screen {
