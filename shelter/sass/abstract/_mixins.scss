@@ -24,14 +24,20 @@
     }
 }
 
-@mixin media-tablet {
-    @media (max-width: calc(#{$content-width - 1})) and (min-width: $tablet-width) {
+@mixin media-medium {
+    @media (max-width: calc(#{$content-width - 1})) {
         @content;
     }
 }
 
-@mixin media-mobile {
-    @media (max-width: $mobile-width) {
+@mixin media-small {
+    @media (max-width: calc(#{$tablet-width - 1})) {
+        @content;
+    }
+}
+
+@mixin media-extra-small {
+    @media (max-width: calc(#{$mobile-width - 1})) {
         @content;
     }
 }

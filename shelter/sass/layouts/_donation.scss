@@ -8,8 +8,12 @@
     justify-content: space-between;
     padding: 80px 0 100px 0;
 
-    @include media-tablet {
+    @include media-medium {
         flex-direction: column-reverse;
+    }
+
+    @include media-small {
+        padding: 42px 0 42px 0;
     }
 }
 
@@ -17,16 +21,21 @@
     flex-basis: 53.92%;
     padding: 12px 0 0 142px;
 
-    @include media-tablet {
-        //$width: 71.328%;
+    @include media-medium {
         $width: 505px;
+        $padding: calc(50% - #{$width / 2});
         flex-basis: auto;
-        padding: 60px calc(50% - #{$width / 2}) 0 calc(50% - #{$width / 2});
+        padding: 60px $padding 0 $padding;
+    }
+
+    @include media-small {
+        padding: 43px 20px 0 20px;
     }
 
     & img {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        margin: auto;
     }
 }
 
@@ -34,16 +43,26 @@
     flex-basis: 43.58%;
     padding: 0 142px 0 0;
 
-    @include media-tablet {
+    @include media-medium {
         $width: 380px;
+        $padding: calc(50% - #{$width / 2});
         flex-basis: auto;
-        padding: 0 calc(50% - #{$width / 2});
+        padding: 0 $padding;
+    }
+
+    @include media-small {
+        padding: 0 10px;
     }
 
     & a {
         display: block;
         line-height: 43px;
         margin-bottom: 19px;
+
+        @include media-small {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -51,6 +70,10 @@
     width: 80%;
     margin-top: 0;
     color: $color-dark-l;
+
+    @include media-small {
+        width: 100%;
+    }
 }
 
 .donation__paragraph {
@@ -59,11 +82,28 @@
     color: $color-dark-l;
     margin: 22px 0 21px 0;
     @include font($size: 1.5rem, $height: 110%);
+
+    @include media-medium {
+        margin-top: 20px;
+    }
+
+    @include media-small {
+        font-family: Arial;
+        text-align: center;
+        letter-spacing: 0;
+        margin: 24px 0 24px 0;
+    }
 }
 
 .donation__legal-info {
     color: $color-dark-m;
     @include font($size: 1.2rem, $height: 1.5rem, $style: italic);
+
+    @include media-small {
+        display: inline-block;
+        line-height: 1.8rem;
+        text-align: justify;
+    }
 }
 
 .donation__credit-card {
@@ -75,6 +115,11 @@
     padding: 10px 15px 10px 60px;
     border-radius: 9px;
     @include font($size: 2rem, $height: 115%);
+
+    @include media-small {
+        padding: 13px 14px 13px 60px;
+        @include font($size: 1.5rem, $height: 110%);
+    }
 
     &::after {
         content: "";

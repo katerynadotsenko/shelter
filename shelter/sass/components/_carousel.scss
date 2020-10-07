@@ -4,15 +4,34 @@
     justify-content: space-between;
     padding: 30px 0 45px 0;
 
-    @include media-tablet {
+    @include media-medium {
         $width: 708px;
         padding: 30px calc(50% - #{$width / 2}) 45px calc(50% - #{$width / 2});
+    }
+
+    @include media-small {
+        position: relative;
+        padding: 12px 0 57px 0;
+        margin: 0 auto 42px auto;
     }
 }
 
 .carousel__arrow {
     display: flex;
     align-items: center;
+
+    @include media-small {
+        position: absolute;
+        bottom: 0;
+
+        &:first-child {
+            left: 43px;
+        }
+
+        &:last-child {
+            right: 43px;
+        }
+    }
 }
 
 .carousel__content {
@@ -20,10 +39,17 @@
     justify-content: space-between;
     flex-basis: 82.5%;
 
-    @include media-tablet {
+    @include media-medium {
         flex-basis: 82%;
 
         & div:last-child {
+            display: none;
+        }
+    }
+
+    @include media-small {
+
+        & div:nth-child(2) {
             display: none;
         }
     }

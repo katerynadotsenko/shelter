@@ -3,6 +3,12 @@
     padding: 30px 0;
     z-index: 1;
 
+    &__navigation {
+        @include media-small {
+            display: none;
+        }
+    }
+
     &__wrapper {
         display: flex;
         justify-content: space-between;
@@ -13,7 +19,7 @@
         top: 30px;
         left: 0;
 
-        @include media-tablet {
+        @include media-medium {
             top: 0;
         }
     }

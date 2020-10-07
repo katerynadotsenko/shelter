@@ -7,8 +7,12 @@
     flex-direction: column;
     padding: 80px 0 100px 0;
 
-    @include media-tablet {
+    @include media-medium {
         padding-top: 82px;
+    }
+
+    @include media-small {
+        padding: 42px 0 42px 0;
     }
 }
 

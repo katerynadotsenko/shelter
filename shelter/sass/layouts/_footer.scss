@@ -7,7 +7,7 @@
         justify-content: space-between;
         padding-top: 40px;
 
-        @include media-tablet {
+        @include media-medium {
             flex-direction: column;
             padding-top: 14px;
         }
@@ -17,10 +17,11 @@
 .footer__content {
     flex-basis: 61.67%;
 
-    @include media-tablet {
+    @include media-medium {
         $width: 640px;
+        $padding: calc(46% - #{$width / 2});
         flex-basis: auto;
-        padding: 0 calc(50% - #{$width / 2});
+        padding: 0 $padding;
     }
 }
 
@@ -32,10 +33,17 @@
     @include font($size: 3.5rem, $height: 130%);
 }
 
-.footer__contacts,
-.footer__location {
+.footer__contacts {
+    @include media-medium {
+        margin: auto;
+        flex-basis: 279px;
+        padding: 0;
+    }
+}
 
-    @include media-tablet {
+.footer__location {
+    @include media-medium {
+        margin: auto;
         flex-basis: 302px;
         padding: 0;
     }
@@ -44,15 +52,20 @@
 .footer__image {
     flex-basis: 25%;
 
-    @include media-tablet {
+    @include media-medium {
         flex-basis: auto;
         padding: 0;
         margin: 69px auto 0 auto;
     }
 
+    @include media-small {
+        padding: 27px 20px 0 20px;
+    }
+
     & img {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        margin: auto;
     }
 }
 
@@ -71,6 +84,10 @@
 .contacts__content {
     height: 113px;
     padding-top: 19px;
+
+    @include media-small {
+        margin-bottom: 29px;
+    }
 }
 
 .location__content {
@@ -119,6 +136,10 @@
     padding-left: 40px;
     color: $color-primary;
 
+    @include media-medium {
+        padding-left: 42px;
+    }
+
     &::after {
         content: "";
         display: block;
@@ -129,5 +150,9 @@
         width: 22px;
         height: 32px;
         background-image: url("/assets/icons/pin.svg");
+
+        @include media-medium {
+            left: 0;
+        }
     }
 }

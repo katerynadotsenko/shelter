@@ -7,10 +7,16 @@
     justify-content: space-between;
     padding: 80px 175px 100px 175px;
 
-    @include media-tablet {
+    @include media-medium {
         $width: 437px;
+        $padding: calc(50% - #{$width / 2});
         flex-direction: column-reverse;
-        padding: 65px calc(50% - #{$width / 2}) 100px calc(50% - #{$width / 2});
+        padding: 65px $padding 100px $padding;
+    }
+
+    @include media-small {
+        padding-top: 27px;
+        padding-bottom: 42px;
     }
 }
 
@@ -19,27 +25,42 @@
 
     img {
         display: block;
-        width: 100%;
+        max-width: 100%;
+        margin: auto;
     }
 
-    @include media-tablet {
+    @include media-medium {
         flex-basis: auto;
         padding: 0 69px;
+    }
+
+    @include media-small {
+        padding: 0 20px;
     }
 }
 
 .about__text {
     flex-basis: 50.59%;
 
-    @include media-tablet {
+    @include media-medium {
         flex-basis: auto;
         margin-bottom: 80px;
+    }
+
+    @include media-small {
+        margin-bottom: 40px;
     }
 
     &_paragraph {
         margin: 25px 0;
         color: #4C4C4C;
         @include font($size: 1.5rem, $height: 160%);
+
+        @include media-small {
+            margin: 24px 0;
+            padding: 0 15px;
+            text-align: justify;
+        }
     }
 
     &_paragraph:last-child {
@@ -50,4 +71,8 @@
 .about__title {
     padding-right: 60px;
     color: $color-dark-l;
+
+    @include media-small {
+        padding: 0;
+    }
 }
