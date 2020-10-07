@@ -1,10 +1,27 @@
 .footer {
     background: $color-dark-background-full;
     background: url("/assets/backgrounds/noise_transparent@2x.png"), radial-gradient(110.67% 538.64% at 5.73% 50%, $color-dark-footer-1 0%, $color-dark-footer-2 60%);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+
+        @include media-tablet {
+            flex-direction: column;
+            padding-top: 14px;
+        }
+    }
 }
 
 .footer__content {
-    padding-top: 40px;
+    flex-basis: 61.67%;
+
+    @include media-tablet {
+        $width: 640px;
+        flex-basis: auto;
+        padding: 0 calc(50% - #{$width / 2});
+    }
 }
 
 .footer__title {
@@ -17,11 +34,21 @@
 
 .footer__contacts,
 .footer__location {
-    padding-right: 18px;
+
+    @include media-tablet {
+        flex-basis: 302px;
+        padding: 0;
+    }
 }
 
 .footer__image {
-    padding-left: 18px;
+    flex-basis: 25%;
+
+    @include media-tablet {
+        flex-basis: auto;
+        padding: 0;
+        margin: 69px auto 0 auto;
+    }
 
     & img {
         display: block;

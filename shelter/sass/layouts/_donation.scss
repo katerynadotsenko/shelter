@@ -6,14 +6,26 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 80px 0 101px 0;
+    padding: 80px 0 100px 0;
+
+    @include media-tablet {
+        flex-direction: column-reverse;
+    }
 }
 
 .donation__image {
     flex-basis: 53.92%;
     padding: 12px 0 0 142px;
 
+    @include media-tablet {
+        //$width: 71.328%;
+        $width: 505px;
+        flex-basis: auto;
+        padding: 60px calc(50% - #{$width / 2}) 0 calc(50% - #{$width / 2});
+    }
+
     & img {
+        display: block;
         width: 100%;
     }
 }
@@ -21,6 +33,12 @@
 .donation__text {
     flex-basis: 43.58%;
     padding: 0 142px 0 0;
+
+    @include media-tablet {
+        $width: 380px;
+        flex-basis: auto;
+        padding: 0 calc(50% - #{$width / 2});
+    }
 
     & a {
         display: block;

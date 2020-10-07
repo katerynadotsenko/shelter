@@ -12,6 +12,10 @@
         position: absolute;
         top: 30px;
         left: 0;
+
+        @include media-tablet {
+            top: 0;
+        }
     }
 
     &_sticky {

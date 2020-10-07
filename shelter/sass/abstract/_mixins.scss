@@ -23,3 +23,15 @@
         flex-basis: $width;
     }
 }
+
+@mixin media-tablet {
+    @media (max-width: calc(#{$content-width - 1})) and (min-width: $tablet-width) {
+        @content;
+    }
+}
+
+@mixin media-mobile {
+    @media (max-width: $mobile-width) {
+        @content;
+    }
+}

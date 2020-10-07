@@ -6,6 +6,12 @@
     display: flex;
     justify-content: space-between;
     padding: 80px 175px 100px 175px;
+
+    @include media-tablet {
+        $width: 437px;
+        flex-direction: column-reverse;
+        padding: 65px calc(50% - #{$width / 2}) 100px calc(50% - #{$width / 2});
+    }
 }
 
 .about__image {
@@ -15,10 +21,20 @@
         display: block;
         width: 100%;
     }
+
+    @include media-tablet {
+        flex-basis: auto;
+        padding: 0 69px;
+    }
 }
 
 .about__text {
     flex-basis: 50.59%;
+
+    @include media-tablet {
+        flex-basis: auto;
+        margin-bottom: 80px;
+    }
 
     &_paragraph {
         margin: 25px 0;

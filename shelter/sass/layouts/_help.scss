@@ -17,6 +17,10 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 45px 25.5px 0 25.5px;
+
+    @include media-tablet {
+        @include columns-wrap(30%);
+    }
 }
 
 .list__item {
@@ -26,6 +30,10 @@
     align-items: center;
     height: 113px;
     margin: 0 60px 55px 60px;
+
+    @include media-tablet {
+        margin: 0 0 55px 0;
+    }
 }
 
 .item__text {

@@ -8,9 +8,8 @@
 
 .navigation__item {
     position: relative;
-    font-size: 1.5rem;
-    line-height: 160%;
     padding: 0 0.3px;
+    @include font($size: 1.5rem, $height: 160%);
     @extend %transition;
 
     &_light {
