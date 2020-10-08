@@ -3,6 +3,8 @@
     justify-content: center;
 
     @include media-small {
+        width: 300px;
+        align-self: center;
         justify-content: space-between;
     }
 

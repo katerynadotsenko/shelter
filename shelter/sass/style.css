@@ -605,6 +605,8 @@ h3 {
 }
 @media (max-width: calc(767px)) {
   .pagination {
+    width: 300px;
+    align-self: center;
     justify-content: space-between;
   }
 }
@@ -759,7 +761,7 @@ h3 {
 }
 @media (max-width: calc(767px)) {
   .pets__list {
-    padding: 12px 15px 27px 15px;
+    padding: 12px calc(50% - 135px) 27px calc(50% - 135px);
   }
   .pets__list div:nth-child(n+4) {
     display: none;

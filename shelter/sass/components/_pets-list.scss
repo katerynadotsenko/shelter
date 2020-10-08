@@ -16,7 +16,9 @@
     }
 
     @include media-small {
-        padding: 12px 15px 27px 15px;
+        $width: 270px;
+        $padding: calc(50% - #{$width / 2});
+        padding: 12px $padding 27px $padding;
 
         & div:nth-child(n+4) {
             display: none;
