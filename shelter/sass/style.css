@@ -603,8 +603,18 @@ h3 {
   display: flex;
   justify-content: center;
 }
+@media (max-width: calc(767px)) {
+  .pagination {
+    justify-content: space-between;
+  }
+}
 .pagination > * {
   margin: 0 10px;
+}
+@media (max-width: calc(767px)) {
+  .pagination > * {
+    margin: 0;
+  }
 }
 .pagination:last-child {
   margin-left: 0;
@@ -734,7 +744,26 @@ h3 {
 }
 
 .pets__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 30px 0 45px 0;
+}
+@media (max-width: calc(1279px)) {
+  .pets__list {
+    padding: 0 64px 25px 64px;
+  }
+  .pets__list div:nth-child(7), .pets__list div:nth-child(8) {
+    display: none;
+  }
+}
+@media (max-width: calc(767px)) {
+  .pets__list {
+    padding: 12px 15px 27px 15px;
+  }
+  .pets__list div:nth-child(n+4) {
+    display: none;
+  }
 }
 
 .carousel {
@@ -819,6 +848,9 @@ h3 {
     height: 2px;
     background-color: #F1CDB3;
   }
+  .burger-button_dark::before, .burger-button_dark::after, .burger-button_dark span {
+    background-color: #000000;
+  }
 }
 
 @media (max-width: calc(767px)) {
@@ -880,6 +912,16 @@ h3 {
 }
 .layout-4-column > * {
   flex-basis: 22.5%;
+}
+@media (max-width: calc(1279px)) {
+  .layout-4-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .layout-4-column > * {
+    flex-basis: 47%;
+  }
 }
 
 .header {
@@ -1042,7 +1084,7 @@ h3 {
 @media (max-width: calc(1279px)) {
   .about__image {
     flex-basis: auto;
-    padding: 0 69px;
+    padding: 0 68px;
   }
 }
 @media (max-width: calc(767px)) {
@@ -1104,8 +1146,8 @@ h3 {
   padding: 80px 0 100px 0;
 }
 @media (max-width: calc(1279px)) {
-  .pets__content {
-    padding-top: 82px;
+  .pets__content_pets-page {
+    padding-bottom: 76px;
   }
 }
 @media (max-width: calc(767px)) {
@@ -1308,7 +1350,7 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .donation__paragraph {
-    margin-top: 20px;
+    margin-top: 21px;
   }
 }
 @media (max-width: calc(767px)) {

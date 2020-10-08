@@ -8,4 +8,8 @@
 
 .layout-4-column {
     @include columns-wrap(22.5%);
+
+    @include media-medium {
+        @include columns-wrap(47%);
+    }
 }
