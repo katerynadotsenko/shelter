@@ -22,10 +22,8 @@
     padding: 12px 0 0 142px;
 
     @include media-medium {
-        $width: 505px;
-        $padding: calc(50% - #{$width / 2});
         flex-basis: auto;
-        padding: 60px $padding 0 $padding;
+        padding: 60px 101px 0 102px;
     }
 
     @include media-small {

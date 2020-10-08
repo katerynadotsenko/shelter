@@ -5,9 +5,17 @@
 
     @include media-medium {
         padding: 0 30px;
+
+        &:not(.header__wrapper) {
+            max-width: $tablet-width;
+        }
     }
 
     @include media-small {
         padding: 0 10px;
+
+        &:not(.header__wrapper) {
+            max-width: $mobile-width;
+        }
     }
 }

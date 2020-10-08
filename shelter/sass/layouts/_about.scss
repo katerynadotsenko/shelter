@@ -8,13 +8,14 @@
     padding: 80px 175px 100px 175px;
 
     @include media-medium {
-        $width: 437px;
-        $padding: calc(50% - #{$width / 2});
+        width: 61.723%;
         flex-direction: column-reverse;
-        padding: 65px $padding 100px $padding;
+        margin: 0 auto;
+        padding: 65px 0 100px 0;
     }
 
     @include media-small {
+        width: 100%;
         padding-top: 27px;
         padding-bottom: 42px;
     }

@@ -753,7 +753,8 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .pets__list {
-    padding: 0 calc(50% - 290px) 25px calc(50% - 290px);
+    width: 81.921%;
+    padding: 0 0 25px 0;
   }
   .pets__list div:nth-child(7), .pets__list div:nth-child(8) {
     display: none;
@@ -761,7 +762,9 @@ h3 {
 }
 @media (max-width: calc(767px)) {
   .pets__list {
-    padding: 12px calc(50% - 135px) 27px calc(50% - 135px);
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0 27px 0;
   }
   .pets__list div:nth-child(n+4) {
     display: none;
@@ -776,11 +779,13 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .carousel {
-    padding: 30px calc(50% - 354px) 45px calc(50% - 354px);
+    margin: 0 auto;
+    width: 100%;
   }
 }
 @media (max-width: calc(767px)) {
   .carousel {
+    justify-content: center;
     position: relative;
     padding: 12px 0 57px 0;
     margin: 0 auto 42px auto;
@@ -797,10 +802,10 @@ h3 {
     bottom: 0;
   }
   .carousel__arrow:first-child {
-    left: 43px;
+    left: 58px;
   }
   .carousel__arrow:last-child {
-    right: 43px;
+    right: 58px;
   }
 }
 
@@ -881,10 +886,16 @@ h3 {
   .wrapper {
     padding: 0 30px;
   }
+  .wrapper:not(.header__wrapper) {
+    max-width: 768px;
+  }
 }
 @media (max-width: calc(767px)) {
   .wrapper {
     padding: 0 10px;
+  }
+  .wrapper:not(.header__wrapper) {
+    max-width: 320px;
   }
 }
 
@@ -972,6 +983,7 @@ h3 {
 @media (max-width: calc(1279px)) {
   .start-screen__wrapper {
     flex-direction: column;
+    align-items: center;
     padding-top: 0;
   }
 }
@@ -982,12 +994,13 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .start-screen__content {
-    flex-basis: auto;
-    padding: 114px calc(50% - 230px) 100px calc(50% - 230px);
+    width: 64.972%;
+    padding: 114px 0 100px 0;
   }
 }
 @media (max-width: calc(767px)) {
   .start-screen__content {
+    width: 100%;
     padding-top: 129px;
     padding-bottom: 105px;
   }
@@ -1064,12 +1077,15 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .about__content {
+    width: 61.723%;
     flex-direction: column-reverse;
-    padding: 65px calc(50% - 218.5px) 100px calc(50% - 218.5px);
+    margin: 0 auto;
+    padding: 65px 0 100px 0;
   }
 }
 @media (max-width: calc(767px)) {
   .about__content {
+    width: 100%;
     padding-top: 27px;
     padding-bottom: 42px;
   }
@@ -1145,6 +1161,7 @@ h3 {
 .pets__content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 80px 0 100px 0;
 }
 @media (max-width: calc(1279px)) {
@@ -1288,7 +1305,7 @@ h3 {
 @media (max-width: calc(1279px)) {
   .donation__image {
     flex-basis: auto;
-    padding: 60px calc(50% - 252.5px) 0 calc(50% - 252.5px);
+    padding: 60px 101px 0 102px;
   }
 }
 @media (max-width: calc(767px)) {
@@ -1435,7 +1452,7 @@ h3 {
 @media (max-width: calc(1279px)) {
   .footer__content {
     flex-basis: auto;
-    padding: 0 calc(46% - 320px);
+    padding: 0;
   }
 }
 
