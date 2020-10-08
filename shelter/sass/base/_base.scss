@@ -8,8 +8,10 @@ html {
 }
 
 body {
+    position: relative;
     font-family: Arial, sans-serif;
     font-size: 1.5rem;
+    overflow-x: hidden;
 
     @include media-extra-small {
         min-width: $mobile-width;
