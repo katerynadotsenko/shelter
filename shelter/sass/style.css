@@ -1290,6 +1290,7 @@ h3 {
 @media (max-width: calc(1279px)) {
   .donation__content {
     flex-direction: column-reverse;
+    align-items: center;
   }
 }
 @media (max-width: calc(767px)) {
@@ -1325,12 +1326,14 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .donation__text {
+    width: 53.673%;
     flex-basis: auto;
-    padding: 0 calc(50% - 190px);
+    padding: 0;
   }
 }
 @media (max-width: calc(767px)) {
   .donation__text {
+    width: 100%;
     padding: 0 10px;
   }
 }

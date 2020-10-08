@@ -10,6 +10,7 @@
 
     @include media-medium {
         flex-direction: column-reverse;
+        align-items: center;
     }
 
     @include media-small {
@@ -42,13 +43,13 @@
     padding: 0 142px 0 0;
 
     @include media-medium {
-        $width: 380px;
-        $padding: calc(50% - #{$width / 2});
+        width: 53.673%;
         flex-basis: auto;
-        padding: 0 $padding;
+        padding: 0;
     }
 
     @include media-small {
+        width: 100%;
         padding: 0 10px;
     }
 
