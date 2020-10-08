@@ -73,6 +73,6 @@
     color: $color-dark-l;
 
     @include media-small {
-        padding: 0;
+        padding: 0 10px;
     }
 }

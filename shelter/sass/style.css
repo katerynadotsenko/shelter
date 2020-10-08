@@ -1090,7 +1090,7 @@ h3 {
 }
 @media (max-width: calc(767px)) {
   .about__title {
-    padding: 0;
+    padding: 0 10px;
   }
 }
 
