@@ -751,7 +751,7 @@ h3 {
 }
 @media (max-width: calc(1279px)) {
   .pets__list {
-    padding: 0 64px 25px 64px;
+    padding: 0 calc(50% - 290px) 25px calc(50% - 290px);
   }
   .pets__list div:nth-child(7), .pets__list div:nth-child(8) {
     display: none;

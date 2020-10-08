@@ -5,7 +5,9 @@
     padding: 30px 0 45px 0;
 
     @include media-medium {
-        padding: 0 64px 25px 64px;
+        $width: 580px;
+        $padding: calc(50% - #{$width / 2});
+        padding: 0 $padding 25px $padding;
 
         & div:nth-child(7),
         & div:nth-child(8) {
