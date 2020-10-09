@@ -716,6 +716,9 @@ h3 {
   background: #FAFAFA;
   border-radius: 9px;
 }
+.card_pets__list {
+  margin-bottom: 30px;
+}
 .card:hover {
   background: #FFFFFF;
   box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
@@ -748,12 +751,12 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 30px 0 45px 0;
+  padding: 45px 0 30px 0;
 }
 @media (max-width: calc(1279px)) {
   .pets__list {
     width: 81.921%;
-    padding: 0 0 25px 0;
+    padding: 15px 0 10px 0;
   }
   .pets__list div:nth-child(7), .pets__list div:nth-child(8) {
     display: none;
@@ -763,7 +766,7 @@ h3 {
   .pets__list {
     width: 100%;
     justify-content: center;
-    padding: 12px 0 27px 0;
+    padding: 27px 0 12px 0;
   }
   .pets__list div:nth-child(n+4) {
     display: none;
