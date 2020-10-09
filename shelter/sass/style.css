@@ -449,7 +449,7 @@ template {
   display: none;
 }
 
-.burger_menu, .card, .navigation__item, .button {
+.burger_menu, .carousel__content, .card, .navigation__item, .button {
   transition: all 0.3s;
 }
 
@@ -713,7 +713,6 @@ h3 {
   flex-direction: column;
   align-items: center;
   padding-bottom: 30px;
-  margin: 15px 0;
   background: #FAFAFA;
   border-radius: 9px;
 }
@@ -773,21 +772,20 @@ h3 {
 
 .carousel {
   display: flex;
-  flex-grow: 1;
+  width: 100%;
   justify-content: space-between;
-  padding: 30px 0 45px 0;
+  padding: 45px 0 60px 0;
 }
 @media (max-width: calc(1279px)) {
   .carousel {
     margin: 0 auto;
-    width: 100%;
   }
 }
 @media (max-width: calc(767px)) {
   .carousel {
     justify-content: center;
     position: relative;
-    padding: 12px 0 57px 0;
+    padding: 27px 0 72px 0;
     margin: 0 auto 42px auto;
   }
 }
@@ -809,22 +807,39 @@ h3 {
   }
 }
 
-.carousel__content {
-  display: flex;
-  justify-content: space-between;
-  flex-basis: 82.5%;
+.carousel__wrapper {
+  position: relative;
+  width: 82.5%;
+  height: 435px;
+  overflow: hidden;
 }
 @media (max-width: calc(1279px)) {
-  .carousel__content {
-    flex-basis: 82%;
-  }
-  .carousel__content div:last-child {
-    display: none;
+  .carousel__wrapper {
+    width: 82%;
   }
 }
 @media (max-width: calc(767px)) {
-  .carousel__content div:nth-child(2) {
-    display: none;
+  .carousel__wrapper {
+    width: 90%;
+  }
+}
+
+.carousel__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 990px;
+}
+@media (max-width: calc(1279px)) {
+  .carousel__content {
+    width: 890px;
+  }
+}
+@media (max-width: calc(767px)) {
+  .carousel__content {
+    width: 810px;
   }
 }
 
