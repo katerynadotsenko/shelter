@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+
+    @include media-small {
+        &_none {
+            opacity: 0;
+        }
+    }
 }
 
 .logo__link {

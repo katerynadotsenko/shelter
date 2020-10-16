@@ -12,11 +12,33 @@ window.onload = function() {
     carouselButtonPrev = document.querySelector('.round__button_left');
     carouselButtonNext = document.querySelector('.round__button_right');
 
+    let burgerButton = document.querySelector('.burger-button');
+    let burgerMenu = document.querySelector('.burger__menu');
+    let header = document.querySelector('.header');
+    let logo = document.querySelector('.logo');
+    let cloneLogo = logo.cloneNode(true);
+
     let randomIds = generateRandomIds(3);
 
     if (data) {
         appendPetCardsToDom(randomIds);
     }
+
+    burgerButton.addEventListener('click', () => {
+        if (burgerButton.classList.contains('burger-button_active')) {
+            burgerButton.classList.remove('burger-button_active');
+            burgerMenu.classList.remove('burger__menu_active');
+            header.classList.remove('background_shadow');
+            logo.classList.remove('logo_none');
+            cloneLogo.remove();
+        } else {
+            burgerButton.classList.add('burger-button_active');
+            burgerMenu.classList.add('burger__menu_active');
+            header.classList.add('background_shadow');
+            logo.classList.add('logo_none');
+            burgerMenu.append(cloneLogo);
+        }
+    })
 
     carouselButtonPrev.addEventListener('click', () => {
         while (carouselContent.hasChildNodes()) {  
