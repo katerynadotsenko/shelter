@@ -14,7 +14,7 @@ window.onload = function() {
 
     let burgerButton = document.querySelector('.burger-button');
     let burgerMenu = document.querySelector('.burger__menu');
-    let header = document.querySelector('.header');
+    let shadowWrapper = document.querySelector('.shadow__wrapper');
     let logo = document.querySelector('.logo');
     let cloneLogo = logo.cloneNode(true);
 
@@ -25,20 +25,12 @@ window.onload = function() {
     }
 
     burgerButton.addEventListener('click', () => {
-        if (burgerButton.classList.contains('burger-button_active')) {
-            burgerButton.classList.remove('burger-button_active');
-            burgerMenu.classList.remove('burger__menu_active');
-            header.classList.remove('background_shadow');
-            logo.classList.remove('logo_none');
-            cloneLogo.remove();
-        } else {
-            burgerButton.classList.add('burger-button_active');
-            burgerMenu.classList.add('burger__menu_active');
-            header.classList.add('background_shadow');
-            logo.classList.add('logo_none');
-            burgerMenu.append(cloneLogo);
-        }
-    })
+        toggleBurgerMenu();
+    });
+
+    shadowWrapper.addEventListener('click', () => {
+        toggleBurgerMenu();
+    });
 
     carouselButtonPrev.addEventListener('click', () => {
         while (carouselContent.hasChildNodes()) {  
@@ -56,6 +48,18 @@ window.onload = function() {
         appendPetCardsToDom(randomIds);
     });
 
+    function toggleBurgerMenu() {
+        burgerButton.classList.toggle('burger-button_active');
+        burgerMenu.classList.toggle('burger__menu_active');
+        shadowWrapper.classList.toggle('shadow__wrapper_active');
+        logo.classList.toggle('logo_none');
+    
+        if (burgerButton.classList.contains('burger-button_active')) {
+            burgerMenu.append(cloneLogo);
+        } else {
+            cloneLogo.remove();
+        };
+    }
     
 }
 
