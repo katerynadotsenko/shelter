@@ -50,22 +50,22 @@ window.onload = function() {
     }
 
     window.addEventListener('resize', () => {
-        let carouselContentCardsCount = document.querySelector('.carousel__content').childElementCount;
+        let carouselContent = document.querySelector('.carousel__content');
     
         if (carouselContent.offsetWidth >= 990) {
-            if (carouselContentCardsCount !== 3) {
+            if (carouselContent.childElementCount !== 3) {
                 randomIds = generateRandomIds(3);
                 removePetCardsFromDom(carouselContent);
                 appendPetCardsToDom(randomIds, carouselContent);
             }
         } else if (carouselContent.offsetWidth >= 580) {
-            if (carouselContentCardsCount !== 2) {
+            if (carouselContent.childElementCount !== 2) {
                 randomIds = generateRandomIds(2);
                 removePetCardsFromDom(carouselContent);
                 appendPetCardsToDom(randomIds, carouselContent);
             }
         } else {
-            if (carouselContentCardsCount !== 1) {
+            if (carouselContent.childElementCount !== 1) {
                 randomIds = generateRandomIds(1);
                 removePetCardsFromDom(carouselContent);
                 appendPetCardsToDom(randomIds, carouselContent);
@@ -104,10 +104,10 @@ window.onload = function() {
     carouselButtonNext.addEventListener('click', () => {
         let carouselContent = document.querySelector('.carousel__content');
         
-        let carouselContentPrev = document.createElement('div');
-        carouselContentPrev.classList.add('carousel__content');
-        carouselWrapper.append(carouselContentPrev);
-        carouselContentPrev.style.left = '100%';
+        let carouselContentNext = document.createElement('div');
+        carouselContentNext.classList.add('carousel__content');
+        carouselWrapper.append(carouselContentNext);
+        carouselContentNext.style.left = '100%';
 
         carouselContent.style.left = '-100%';
         
@@ -116,7 +116,7 @@ window.onload = function() {
         }, 300);
         
         setTimeout(() => {
-            carouselContentPrev.style.left = '0';
+            carouselContentNext.style.left = '0';
         }, 50);
 
         if (carouselContent.offsetWidth >= 990) {
@@ -126,7 +126,7 @@ window.onload = function() {
         } else {
             randomIds = generateRandomIds(1);
         }
-        appendPetCardsToDom(randomIds, carouselContentPrev);
+        appendPetCardsToDom(randomIds, carouselContentNext);
     });
 
     const toggleBurgerMenu = () => {
