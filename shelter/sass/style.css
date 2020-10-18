@@ -449,7 +449,7 @@ template {
   display: none;
 }
 
-.burger__menu, .burger-button, .carousel__content, .card, .navigation__item, .button {
+.burger__menu, .burger-button, .card, .navigation__item, .button {
   transition: all 0.3s;
 }
 
@@ -863,15 +863,16 @@ h3 {
   display: flex;
   justify-content: space-between;
   width: 990px;
+  transition: left 0.3s linear;
 }
 @media (max-width: calc(1279px)) {
   .carousel__content {
-    width: 890px;
+    width: 580px;
   }
 }
 @media (max-width: calc(767px)) {
   .carousel__content {
-    width: 810px;
+    width: 270px;
   }
 }
 

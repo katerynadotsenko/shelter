@@ -2,9 +2,16 @@ window.onload = function() {
 
     let burgerButton = document.querySelector('.burger-button');
     let burgerMenu = document.querySelector('.burger__menu');
+    let navigationItemActive = document.querySelector('.item_active');
     let shadowWrapper = document.querySelector('.shadow__wrapper');
     let logo = document.querySelector('.logo');
     let cloneLogo = logo.cloneNode(true);
+
+    navigationItemActive.addEventListener('click', () => {
+        if (burgerButton.classList.contains('burger-button_active')) {
+            toggleBurgerMenu();
+        }
+    });
 
     burgerButton.addEventListener('click', () => {
         toggleBurgerMenu();

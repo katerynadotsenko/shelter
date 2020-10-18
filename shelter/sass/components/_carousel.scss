@@ -61,16 +61,18 @@
     display: flex;
     justify-content: space-between;
     width: $width;
-    @extend %transition;
+    transition: left .3s linear;
 
     @include media-medium {
         $gap: 40px;
+        $cards_quantity: 2;
         $width: #{$card_width * $cards_quantity + $gap * ($cards_quantity - 1)};
         width: $width;
     }
 
     @include media-small {
         $gap: 0;
+        $cards_quantity: 1;
         $width: #{$card_width * $cards_quantity + $gap * ($cards_quantity - 1)};
         width: $width;
     }
