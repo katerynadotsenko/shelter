@@ -72,4 +72,9 @@ h5 {
     letter-spacing: 0.06em;
     margin: 40px 0 35px 0;
     @include font($size: 1.5rem, $height: 115%);
+
+    @include media-medium {
+        margin: 19px 0 16px 0;
+        @include font($size: 1.3rem, $height: 110%);
+    }
 }

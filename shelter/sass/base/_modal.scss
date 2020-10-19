@@ -1,12 +1,30 @@
 .modal {
     & h3 {
         margin: 0;
+
+        @include media-small {
+            @include font($size: 3.5rem, $height: 130%);
+        }
+    }
+
+    & h4 {
+        @include media-small {
+            text-align: center;
+        }
     }
 
     width: 900px;
     background: $color-light-s;
     border-radius: 9px;
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+
+    @include media-medium {
+        width: 630px;
+    }
+
+    @include media-small {
+        width: 240px;
+    }
 
     &__content {
         display: flex;
@@ -21,17 +39,43 @@
         & img {
             display: block;
             width: 100%;
+            //border-radius: 9px 0 0 9px;
+            border-radius: 9px;
+        }
+
+        @include media-small {
+            display: none;
         }
     }
 
     &__text {
         flex-basis: 44.44%;
         padding: 50px 20px 50px 29px;
+
+        @include media-medium {
+            padding: 10px 9px;
+        }
+
+        @include media-small {
+            flex-basis: 100%;
+        }
+
+        & h5 {
+            @include media-small {
+                text-align: justify;
+                margin: 20px 0 20px 0;
+            }
+        }
     }
 
     &__list {
         list-style-type: none;
         padding: 0;
+
+        @include media-small {
+            margin-bottom: 0;
+            padding-left: 1px;
+        }
 
         & li {
             display: flex;
@@ -46,6 +90,11 @@
 
         & h5 {
             margin: 5.5px 0;
+
+            @include media-medium {
+                margin: 3.5px 0;
+                @include font($size: 1.5rem, $height: 110%);
+            }
         }
     }
 }
@@ -54,6 +103,10 @@
     position: absolute;
     top: -53px;
     right: -41px;
+
+    @include media-small {
+        right: -30px;
+    }
 
     &::after {
         content: '';
