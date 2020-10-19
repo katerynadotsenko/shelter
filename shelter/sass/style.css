@@ -672,7 +672,7 @@ h5 {
 .modal__image img {
   display: block;
   width: 100%;
-  border-radius: 9px;
+  border-radius: 9px 0 0 9px;
 }
 @media (max-width: calc(767px)) {
   .modal__image {
@@ -909,6 +909,7 @@ h5 {
   padding-bottom: 30px;
   background: #FAFAFA;
   border-radius: 9px;
+  overflow: hidden;
 }
 .card_pets__list {
   margin-bottom: 30px;
@@ -1008,7 +1009,6 @@ h5 {
   position: relative;
   width: 82.5%;
   height: 435px;
-  overflow: hidden;
 }
 @media (max-width: calc(1279px)) {
   .carousel__wrapper {

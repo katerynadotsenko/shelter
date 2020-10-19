@@ -6,6 +6,7 @@
     padding-bottom: 30px;
     background: $color-light-s;
     border-radius: 9px;
+    overflow: hidden;
     @extend %transition;
 
     &_pets__list {

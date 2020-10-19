@@ -11,5 +11,8 @@
   "description": "",
   "dependencies": {
     "normalize-scss": "^7.0.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }

@@ -79,6 +79,7 @@ window.onload = function() {
         let carouselContentPrev = document.createElement('div');
         carouselContentPrev.classList.add('carousel__content');
         carouselWrapper.append(carouselContentPrev);
+        carouselWrapper.style.overflow = 'hidden';
         carouselContentPrev.style.left = '-100%';
 
         carouselContent.style.left = '100%';
@@ -90,6 +91,10 @@ window.onload = function() {
         setTimeout(() => {
             carouselContentPrev.style.left = '0';
         }, 50);
+
+        setTimeout(() => {
+            carouselWrapper.style.overflow = null;
+        }, 360);
 
         if (carouselContent.offsetWidth >= 990) {
             randomIds = generateRandomIds(3);
@@ -107,6 +112,7 @@ window.onload = function() {
         let carouselContentNext = document.createElement('div');
         carouselContentNext.classList.add('carousel__content');
         carouselWrapper.append(carouselContentNext);
+        carouselWrapper.style.overflow = 'hidden';
         carouselContentNext.style.left = '100%';
 
         carouselContent.style.left = '-100%';
@@ -118,6 +124,10 @@ window.onload = function() {
         setTimeout(() => {
             carouselContentNext.style.left = '0';
         }, 50);
+
+        setTimeout(() => {
+            carouselWrapper.style.overflow = null;
+        }, 360);
 
         if (carouselContent.offsetWidth >= 990) {
             randomIds = generateRandomIds(3);

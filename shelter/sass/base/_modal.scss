@@ -39,8 +39,7 @@
         & img {
             display: block;
             width: 100%;
-            //border-radius: 9px 0 0 9px;
-            border-radius: 9px;
+            border-radius: 9px 0 0 9px;
         }
 
         @include media-small {
