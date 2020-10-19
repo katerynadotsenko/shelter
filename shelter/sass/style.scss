@@ -8,9 +8,10 @@
 
 //Base
 @import "base/base";
+@import "base/buttons";
+@import "base/modal";
 
 //Components
-@import "components/buttons";
 @import "components/shadow-wrapper";
 @import "components/pagination";
 @import "components/navigation";

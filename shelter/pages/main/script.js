@@ -19,7 +19,7 @@ window.onload = function() {
     let cloneLogo = logo.cloneNode(true);
 
 
-    /* toggle burger menu */
+    /* Toggle burger menu */
 
     navigationItemActive.addEventListener('click', () => {
         if (burgerButton.classList.contains('burger-button_active')) {
@@ -36,7 +36,7 @@ window.onload = function() {
     });
 
 
-    /* carousel */
+    /* Carousel */
 
     if (data) {
         if (carouselContent.offsetWidth >= 990) {
@@ -129,6 +129,8 @@ window.onload = function() {
         appendPetCardsToDom(randomIds, carouselContentNext);
     });
 
+    /* Burger Menu */
+
     const toggleBurgerMenu = () => {
         burgerButton.classList.toggle('burger-button_active');
         burgerMenu.classList.toggle('burger__menu_active');
@@ -161,7 +163,7 @@ const generateRandomIds = (cardQuantity) => {
 const appendPetCardsToDom = (randomIds, carouselContent) => {
     let card = '';
     randomIds.forEach(id => {
-        card = new PetCard(data[id].id, data[id].name, data[id].img);
+        card = new PetCard(data[id]);
         carouselContent.append(card.generatePetCard());
     });
 }
