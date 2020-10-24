@@ -14,10 +14,10 @@ export default class PetCard {
         this.parasites = parasites;
     }
 
-    generatePetCard() {
+    generatePetCard(...classes) {
         let template = '';
         const card = document.createElement('div');
-        card.className = 'card';
+        card.classList.add('card', ...arguments);
         card.id = this.id;
         this.addModalToPetCard(card);
         template = `<div class="card__image">
