@@ -25,6 +25,12 @@ export default class Modal {
     openModal() {
         document.body.append(this.overlay);
         document.body.classList.toggle('blocked');
+        const overlay = document.querySelector('.overlay');
+        const modal = document.querySelector('.modal');
+        setTimeout(() => {
+            overlay.style.opacity = '1';
+            modal.style.opacity = '1';
+        }, 100);
     }
 
     hoverAction(e) {
@@ -39,8 +45,14 @@ export default class Modal {
     closeModal(e) {
         const classes = e.target.classList;
         if (classes.contains('overlay') || classes.contains('modal__close-button')) {
-            document.querySelector('.overlay').remove();
-            document.body.classList.toggle('blocked');
+            const overlay = document.querySelector('.overlay');
+            const modal = document.querySelector('.modal');
+            overlay.style.opacity = '0';
+            modal.style.opacity = '0';
+            setTimeout(() => {
+                document.querySelector('.overlay').remove();
+                document.body.classList.toggle('blocked');
+            }, 300);
         }
     }
 
