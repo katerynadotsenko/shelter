@@ -20,6 +20,7 @@ export default class Modal {
     bindEvents() {
         this.overlay.addEventListener('click', this.closeModal);
         this.overlay.addEventListener('mouseover', this.hoverAction);
+        this.overlay.addEventListener('mouseout', this.outAction);
     }
 
     openModal() {
@@ -37,7 +38,12 @@ export default class Modal {
         const classes = e.target.classList;
         if ((classes.contains('overlay') || classes.contains('modal__close-button')) && !classes.contains('modal')) {
             document.querySelector('.modal__close-button').style.cssText = 'background-color: #FDDCC4; border: 2px solid #FDDCC4';
-        } else {
+        }
+    }
+
+    outAction(e) {
+        const classes = e.target.classList;
+        if ((classes.contains('overlay') || classes.contains('modal__close-button')) && !classes.contains('modal')) {
             document.querySelector('.modal__close-button').style.cssText = 'background-color: transparent; border: 2px solid #F1CDB3';
         }
     }

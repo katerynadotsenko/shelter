@@ -13,8 +13,10 @@ body {
     font-size: 1.5rem;
     overflow-x: hidden;
 
-    &.blocked {
-        overflow: hidden;
+    @include media-small {
+        &.blocked {
+            overflow: hidden;
+        }
     }
 
     @include media-extra-small {

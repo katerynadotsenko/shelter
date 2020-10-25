@@ -71,7 +71,8 @@
     color: $color-dark-l;
 
     @include media-small {
-        width: 100%;
+        width: auto;
+        margin: 0 28px 15px 28px;
     }
 }
 
@@ -87,7 +88,6 @@
     }
 
     @include media-small {
-        font-family: Arial;
         text-align: center;
         letter-spacing: 0;
         margin: 24px 0 24px 0;
