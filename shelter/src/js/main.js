@@ -146,6 +146,7 @@ window.onload = function() {
         burgerMenu.classList.toggle('burger__menu_active');
         shadowWrapper.classList.toggle('shadow__wrapper_active');
         logo.classList.toggle('logo_none');
+        document.body.classList.toggle('blocked');
     
         if (burgerButton.classList.contains('burger-button_active')) {
             burgerMenu.append(cloneLogo);

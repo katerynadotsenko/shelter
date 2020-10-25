@@ -96,27 +96,28 @@
             }
         }
     }
-}
 
-.modal__close-button {
-    position: absolute;
-    top: -53px;
-    right: -41px;
-
-    @include media-small {
-        right: -30px;
-    }
-
-    &::after {
-        content: '';
+    &__close-button {
         position: absolute;
-        background-image: url('../../assets/icons/close-ico.svg');
-        background-repeat: no-repeat;
-        background-position: center;
-        width: 12px;
-        height: 12px;
+        top: -53px;
+        right: -41px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-image: url('../../assets/icons/close-ico.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            width: 12px;
+            height: 12px;
+        }
+
+        @include media-small {
+            right: -30px;
+        }
     }
 }
+
 
 .overlay {
     display: flex;
