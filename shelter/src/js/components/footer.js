@@ -29,7 +29,7 @@ export default class Footer {
                                     </div>
                                 </div>
                             </div>
-                            <div class="footer__image"><img src="/assets/images/footer-puppy.png" alt="puppy"></div>
+                            <div class="footer__image"><img src="../../assets/images/footer-puppy.png" alt="puppy"></div>
                         </div>`;
         return footer;
     }

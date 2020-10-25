@@ -1,11 +1,11 @@
 .start-screen {
     position: relative;
     background-color: $color-dark-background;
-    background-image: url("/assets/backgrounds/noise_transparent@2x.png");
-    background-image: url("/assets/backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, $color-light-background 10%, $color-dark-background 70%);
+    background-image: url("../../assets/backgrounds/noise_transparent@2x.png");
+    background-image: url("../../assets/backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, $color-light-background 10%, $color-dark-background 70%);
 
     @include media-small {
-        background: url("/assets/backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, $color-light-background 0%, $color-dark-background 80%);
+        background: url("../../assets/backgrounds/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, $color-light-background 0%, $color-dark-background 80%);
     }
 }
 
