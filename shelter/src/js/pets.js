@@ -1,8 +1,9 @@
+import data from '../../js/pets-mock.js';
 import PetCard from '../../js/pet-card.js';
 import PetsGeneratedData from '../../js/pets-generated-data.js';
 
 window.onload = function() {
-    const petsData = new PetsGeneratedData().generatePetsData();
+    const petsData = new PetsGeneratedData(data).generatePetsData();
 
     const petsList = document.querySelector('.pets__list'),
             burgerButton = document.querySelector('.burger-button'),
@@ -21,33 +22,54 @@ window.onload = function() {
     let activePage = 1;
     let itemsQuantityPerPage = 0;
     let pageQuantity = 0;
+
     const petsDataLength = petsData.length;
 
-    //TODO add listener on change window size;
+
+    window.addEventListener('resize', () => {
+        if (document.body.offsetWidth >= 1280) {
+            if (itemsQuantityPerPage !== 8) {
+                updateItemsPerPage(8)
+            }
+        } else if (document.body.offsetWidth >= 768) {
+            if (itemsQuantityPerPage !== 6) {
+                updateItemsPerPage(6)
+            }
+        } else {
+            if (itemsQuantityPerPage !== 3) {
+                updateItemsPerPage(3)
+            }
+        }
+    });
 
     if (petsData) {
+
         if (document.body.offsetWidth >= 1280) {
             itemsQuantityPerPage = 8;
-            pageQuantity = petsDataLength / itemsQuantityPerPage;
         } else if (document.body.offsetWidth >= 768) {
             itemsQuantityPerPage = 6;
-            pageQuantity = petsDataLength / itemsQuantityPerPage;
         } else {
             itemsQuantityPerPage = 3;
-            pageQuantity = petsDataLength / itemsQuantityPerPage;
         }
-    console.log("pageQuantity - ", pageQuantity);
+
+        pageQuantity = petsDataLength / itemsQuantityPerPage;
+        console.log("pageQuantity - ", pageQuantity);
 
         appendPetCardsToDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
     }
 
-    nextPage.addEventListener('click', () => {
-        if (activePage < pageQuantity) {
-            activePage++;
-            changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
-            console.log(activePage);
+    function updateItemsPerPage(itemsQuantity) {
+        itemsQuantityPerPage = itemsQuantity;
+        pageQuantity = petsDataLength / itemsQuantityPerPage;
+        if (activePage > pageQuantity) {
+            activePage = pageQuantity;
+            activePageElement.innerText = activePage;
         }
+        changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
+        updateButtonAvailability();
+    }
 
+    function updateButtonAvailability () {
         if (activePage > 1) {
             prevPage.disabled = false;
             firstPage.disabled = false;
@@ -56,16 +78,6 @@ window.onload = function() {
         if (activePage === pageQuantity) {
             nextPage.disabled = true;
             lastPage.disabled = true;
-        }
-
-        activePageElement.innerText = activePage;
-    });
-
-    prevPage.addEventListener('click', () => {
-        if (activePage > 1) {
-            activePage--;
-            changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
-            console.log(activePage);
         }
 
         if (activePage === 1) {
@@ -77,6 +89,28 @@ window.onload = function() {
             nextPage.disabled = false;
             lastPage.disabled = false;
         }
+    }
+
+    nextPage.addEventListener('click', () => {
+        if (activePage < pageQuantity) {
+            activePage++;
+            changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
+            console.log(activePage);
+        }
+
+        updateButtonAvailability();
+
+        activePageElement.innerText = activePage;
+    });
+
+    prevPage.addEventListener('click', () => {
+        if (activePage > 1) {
+            activePage--;
+            changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
+            console.log(activePage);
+        }
+
+        updateButtonAvailability();
 
         activePageElement.innerText = activePage;
     });

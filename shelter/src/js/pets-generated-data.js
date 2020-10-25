@@ -1,7 +1,6 @@
-import data from '../../js/pets-mock.js';
-
 export default class PetsGeneratedData {
-    constructor() {
+
+    constructor(data) {
         this.data = data;
     }
 
@@ -33,4 +32,5 @@ export default class PetsGeneratedData {
         //console.log("generatePetsArray - ", generatePetsArray);
         return generatePetsArray;
     }
+    
 }
