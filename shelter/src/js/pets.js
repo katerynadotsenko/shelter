@@ -1,8 +1,16 @@
 import data from '../../js/pets-mock.js';
-import PetCard from '../../js/pet-card.js';
 import PetsGeneratedData from '../../js/pets-generated-data.js';
+import Header from '../../js/components/header.js';
+import Footer from '../../js/components/footer.js';
+import PetCard from '../../js/components/pet-card.js';
 
 window.onload = function() {
+    const header = new Header('pets');
+    header.appendHeaderToDom();
+
+    const footer = new Footer();
+    footer.appendFooterToDom();
+
     const petsData = new PetsGeneratedData(data).generatePetsData();
 
     const petsList = document.querySelector('.pets__list'),
@@ -27,6 +35,7 @@ window.onload = function() {
 
 
     window.addEventListener('resize', () => {
+
         if (document.body.offsetWidth >= 1280) {
             if (itemsQuantityPerPage !== 8) {
                 updateItemsPerPage(8)
@@ -53,7 +62,6 @@ window.onload = function() {
         }
 
         pageQuantity = petsDataLength / itemsQuantityPerPage;
-        console.log("pageQuantity - ", pageQuantity);
 
         appendPetCardsToDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
     }
@@ -68,6 +76,8 @@ window.onload = function() {
         changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
         updateButtonAvailability();
     }
+
+    /* Pagination */
 
     function updateButtonAvailability () {
         if (activePage > 1) {
@@ -95,7 +105,6 @@ window.onload = function() {
         if (activePage < pageQuantity) {
             activePage++;
             changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
-            console.log(activePage);
         }
 
         updateButtonAvailability();
@@ -107,7 +116,6 @@ window.onload = function() {
         if (activePage > 1) {
             activePage--;
             changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
-            console.log(activePage);
         }
 
         updateButtonAvailability();
@@ -117,10 +125,7 @@ window.onload = function() {
 
     firstPage.addEventListener('click', () => {
         activePage = 1;
-        nextPage.disabled = false;
-        lastPage.disabled = false;
-        firstPage.disabled = true;
-        prevPage.disabled = true;
+        updateButtonAvailability();
         changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
 
         activePageElement.innerText = activePage;
@@ -128,14 +133,14 @@ window.onload = function() {
 
     lastPage.addEventListener('click', () => {
         activePage = pageQuantity;
-        nextPage.disabled = true;
-        prevPage.disabled = false;
-        firstPage.disabled = false;
-        lastPage.disabled = true;
+        updateButtonAvailability();
         changePetsCardsInDom(petsData.slice(activePage * itemsQuantityPerPage - itemsQuantityPerPage, activePage * itemsQuantityPerPage));
 
         activePageElement.innerText = activePage;
     });
+
+
+    /* Toggle burger menu */
 
     navigationItemActive.addEventListener('click', () => {
         if (burgerButton.classList.contains('burger-button_active')) {
@@ -165,6 +170,8 @@ window.onload = function() {
         };
     }
 
+    /* Update Cards List in DOM */
+
     function changePetsCardsInDom (data) {
         while (petsList.hasChildNodes()) {  
             petsList.removeChild(petsList.firstChild);
@@ -179,4 +186,5 @@ window.onload = function() {
             petsList.append(card.generatePetCard(['card_pets__list']));
         });
     }
+
 }

@@ -1,22 +1,30 @@
 import data from '../../js/pets-mock.js';
-import PetCard from '../../js/pet-card.js';
+import Header from '../../js/components/header.js';
+import Footer from '../../js/components/footer.js';
+import PetCard from '../../js/components/pet-card.js';
 
 let randomPart = 1;
 let randomIds = 0;
 
 window.onload = function() {
-    let carouselWrapper = document.querySelector('.carousel__wrapper');
-    let carouselContent = document.querySelector('.carousel__content');
+    const header = new Header('main');
+    header.appendHeaderToDom();
 
-    let carouselButtonPrev = document.querySelector('.round__button_right');
-    let carouselButtonNext = document.querySelector('.round__button_left');
+    const footer = new Footer();
+    footer.appendFooterToDom();
 
-    let burgerButton = document.querySelector('.burger-button');
-    let burgerMenu = document.querySelector('.burger__menu');
-    let navigationItemActive = document.querySelector('.item_active');
-    let shadowWrapper = document.querySelector('.shadow__wrapper');
-    let logo = document.querySelector('.logo');
-    let cloneLogo = logo.cloneNode(true);
+    const carouselWrapper = document.querySelector('.carousel__wrapper'),
+            carouselContent = document.querySelector('.carousel__content'),
+            carouselButtonPrev = document.querySelector('.round__button_right'),
+            carouselButtonNext = document.querySelector('.round__button_left');
+
+    const burgerButton = document.querySelector('.burger-button'),
+            burgerMenu = document.querySelector('.burger__menu'),
+            navigationItemActive = document.querySelector('.item_active'),
+            shadowWrapper = document.querySelector('.shadow__wrapper');
+
+    const logo = document.querySelector('.logo'),
+            cloneLogo = logo.cloneNode(true);
 
 
     /* Toggle burger menu */
