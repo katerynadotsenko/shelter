@@ -13,6 +13,8 @@ window.onload = function() {
 
     const petsData = new PetsGeneratedData(data).generatePetsData();
 
+    const petsLink = document.getElementById('pets-link');
+
     const petsList = document.querySelector('.pets__list'),
             burgerButton = document.querySelector('.burger-button'),
             burgerMenu = document.querySelector('.burger__menu'),
@@ -32,6 +34,15 @@ window.onload = function() {
     let pageQuantity = 0;
 
     const petsDataLength = petsData.length;
+
+    petsLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    });
 
 
     window.addEventListener('resize', () => {
