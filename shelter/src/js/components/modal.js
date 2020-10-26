@@ -4,6 +4,7 @@ export default class Modal {
         this.modal = '';
         this.overlay = '';
         this.modalCloseBtn = '';
+        this.bodyWidth = document.body.clientWidth;
     }
 
     buildModal(content) {
@@ -25,7 +26,13 @@ export default class Modal {
 
     openModal() {
         document.body.append(this.overlay);
-        document.body.classList.toggle('blocked');
+        document.body.classList.toggle('noscroll');
+
+        if (this.bodyWidth < document.body.clientWidth) {
+            const scrollWidth = document.body.clientWidth - this.bodyWidth;
+            document.body.style.paddingRight = `${scrollWidth}px`;
+        }
+
         const overlay = document.querySelector('.overlay');
         const modal = document.querySelector('.modal');
         setTimeout(() => {
@@ -57,7 +64,8 @@ export default class Modal {
             modal.style.opacity = '0';
             setTimeout(() => {
                 document.querySelector('.overlay').remove();
-                document.body.classList.toggle('blocked');
+                document.body.classList.toggle('noscroll');
+                document.body.style.paddingRight = '0';
             }, 300);
         }
     }

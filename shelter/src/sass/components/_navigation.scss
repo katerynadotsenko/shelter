@@ -22,7 +22,7 @@
     &_light {
         color: $color-dark-s;
 
-        &.item_active {
+        &_active {
             color: $color-light-s;
         }
     }
@@ -34,7 +34,7 @@
     &_dark {
         color: $color-dark-l;
 
-        &.item_active {
+        &_active {
             color: $color-dark-xl-2;
         }
     }
@@ -52,10 +52,22 @@
         height: 3px;
         background: transparent;
     }
-}
 
-.item_active {
-    &.navigation__item::after {
-        background: $color-primary;
+    &_active {
+        &.navigation__item::after {
+            background: $color-primary;
+        }
+    }
+
+    &_inactive {
+        cursor: default;
+
+        &.navigation__item_light:hover {
+            color: $color-dark-s;
+        }
+
+        &.navigation__item_dark:hover {
+            color: $color-dark-l;
+        }
     }
 }

@@ -20,7 +20,7 @@ window.onload = function() {
 
     const burgerButton = document.querySelector('.burger-button'),
             burgerMenu = document.querySelector('.burger__menu'),
-            navigationItemActive = document.querySelector('.item_active'),
+            navigationItemActive = document.querySelector('.navigation__item_active'),
             shadowWrapper = document.querySelector('.shadow__wrapper');
 
     const logo = document.querySelector('.logo'),

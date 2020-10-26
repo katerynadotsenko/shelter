@@ -17,16 +17,16 @@ export default class Header {
                             <nav class="header__navigation burger__menu">
                                 <ul class="navigation">
                                     <a href="../main/index.html">
-                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light item_active' : 'navigation__item_dark'}">About the shelter</li>
+                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light navigation__item_active' : 'navigation__item_dark'}">About the shelter</li>
                                     </a>
                                     <a href="../pets/index.html">
-                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark item_active'}">Our pets</li>
+                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark navigation__item_active'}">Our pets</li>
                                     </a>
                                     <a href="#" onclick="return false;">
-                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark'}">Help the shelter</li>
+                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark'} navigation__item_inactive">Help the shelter</li>
                                     </a>
                                     <a href="#" onclick="return false;">
-                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark'}">Contacts</li>
+                                        <li class="navigation__item ${this.page === 'main' ? 'navigation__item_light' : 'navigation__item_dark'} navigation__item_inactive">Contacts</li>
                                     </a>
                                 </ul>
                             </nav>

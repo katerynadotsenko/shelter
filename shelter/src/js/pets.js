@@ -16,7 +16,7 @@ window.onload = function() {
     const petsList = document.querySelector('.pets__list'),
             burgerButton = document.querySelector('.burger-button'),
             burgerMenu = document.querySelector('.burger__menu'),
-            navigationItemActive = document.querySelector('.item_active'),
+            navigationItemActive = document.querySelector('.navigation__item_active'),
             shadowWrapper = document.querySelector('.shadow__wrapper'),
             logo = document.querySelector('.logo'),
             cloneLogo = logo.cloneNode(true);
@@ -36,11 +36,11 @@ window.onload = function() {
 
     window.addEventListener('resize', () => {
 
-        if (document.body.offsetWidth >= 1280) {
+        if (window.innerWidth >= 1280) {
             if (itemsQuantityPerPage !== 8) {
                 updateItemsPerPage(8)
             }
-        } else if (document.body.offsetWidth >= 768) {
+        } else if (window.innerWidth >= 768) {
             if (itemsQuantityPerPage !== 6) {
                 updateItemsPerPage(6)
             }
@@ -49,13 +49,14 @@ window.onload = function() {
                 updateItemsPerPage(3)
             }
         }
+
     });
 
     if (petsData) {
 
-        if (document.body.offsetWidth >= 1280) {
+        if (window.innerWidth >= 1280) {
             itemsQuantityPerPage = 8;
-        } else if (document.body.offsetWidth >= 768) {
+        } else if (window.innerWidth >= 768) {
             itemsQuantityPerPage = 6;
         } else {
             itemsQuantityPerPage = 3;
