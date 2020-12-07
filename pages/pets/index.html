@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cozy House - Pets Page</title>
+</head>
+
+<body>
+    <header class="header header_sticky"></header>
+    <main class="main main_margin-for-sticky-header">
+        <section class="pets">
+            <div class="wrapper">
+                <div class="pets__content pets__content_pets-page">
+                    <h3 class="pets__title">Our friends who<br>are looking for a house</h3>
+                    <div class="pets__list">
+                    </div>
+                    <div class="pagination">
+                        <button id="first-page" class="button round__button button_bordered button_pagination" disabled>&lt;&lt;</button>
+                        <button id="prev-page" class="button round__button button_bordered button_pagination" disabled>&lt;</button>
+                        <button id="active-page" class="button round__button button_colored button_pagination">1</button>
+                        <button id="next-page" class="button round__button button_bordered button_pagination">&gt;</button>
+                        <button id="last-page" class="button round__button button_bordered button_pagination">&gt;&gt;</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="footer"></footer>
+    </main>
+    <script src="./script.js" type="module"></script>
+</body>
+
+</html>
